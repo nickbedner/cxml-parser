@@ -1,0 +1,3 @@
+[submodule "lib/cstorage"]
+	path = lib/cstorage
+	url = https://github.com/nickbedner/cstorage
