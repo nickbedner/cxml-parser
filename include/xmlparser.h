@@ -17,6 +17,7 @@
 
 static inline struct XmlNode* xml_parser_load_xml_file(char* xml_file_path);
 static inline struct XmlNode* xml_parser_load_node(char** scanner);
+static inline void xml_parser_delete(struct XmlNode* xml_node);
 
 static inline char* xml_parser_read_file(const char* filename, int* file_length) {
   FILE* fp = fopen(filename, "rb");
@@ -196,7 +197,7 @@ static inline struct XmlNode* xml_parser_load_node(char** scanner) {
   return xml_node;
 }
 
-void xml_parser_delete(struct XmlNode* xml_node) {
+static inline void xml_parser_delete(struct XmlNode* xml_node) {
   if (xml_node->child_nodes != NULL) {
     const char* key;
     struct MapIter iter = map_iter();
