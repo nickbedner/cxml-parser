@@ -140,7 +140,7 @@ static inline struct XmlNode* xml_parser_load_node(char** scanner) {
   // Add attributes
   for (int tag_num = 0; tag_num < array_list_size(&tag_parts); tag_num++) {
     char* tag_text = (char*)array_list_get(&tag_parts, tag_num);
-    size_t tag_text_length = strnlen(tag_text, 9001);
+    //size_t tag_text_length = strnlen(tag_text, 9001);
     char* tag_contains_equal = strchr(tag_text, '=');
     if (tag_contains_equal != NULL) {
       size_t tag_equal_length = tag_contains_equal - tag_text;
